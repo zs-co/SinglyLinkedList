@@ -1,12 +1,12 @@
 #ifndef Node_H_LinkedList
 #endif //NNode_H_LinkedList
-
+template <typename dataType>
 class Node{
 public:
-    int data;
-    Node* next; // address of next node.
+    dataType data;
+    Node<dataType>* next; // address of next node.
 
-    Node(){
+  explicit Node(){
         data = 0;
         next = nullptr;
     }

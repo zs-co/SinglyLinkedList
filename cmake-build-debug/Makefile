@@ -142,6 +142,33 @@ LinkedList/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\LinkedList.dir\build.make CMakeFiles/LinkedList.dir/build
 .PHONY : LinkedList/fast
 
+SinglyLinkedList.obj: SinglyLinkedList.cpp.obj
+
+.PHONY : SinglyLinkedList.obj
+
+# target to build an object file
+SinglyLinkedList.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LinkedList.dir\build.make CMakeFiles/LinkedList.dir/SinglyLinkedList.cpp.obj
+.PHONY : SinglyLinkedList.cpp.obj
+
+SinglyLinkedList.i: SinglyLinkedList.cpp.i
+
+.PHONY : SinglyLinkedList.i
+
+# target to preprocess a source file
+SinglyLinkedList.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LinkedList.dir\build.make CMakeFiles/LinkedList.dir/SinglyLinkedList.cpp.i
+.PHONY : SinglyLinkedList.cpp.i
+
+SinglyLinkedList.s: SinglyLinkedList.cpp.s
+
+.PHONY : SinglyLinkedList.s
+
+# target to generate assembly for a file
+SinglyLinkedList.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LinkedList.dir\build.make CMakeFiles/LinkedList.dir/SinglyLinkedList.cpp.s
+.PHONY : SinglyLinkedList.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -178,6 +205,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... LinkedList
+	@echo ... SinglyLinkedList.obj
+	@echo ... SinglyLinkedList.i
+	@echo ... SinglyLinkedList.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

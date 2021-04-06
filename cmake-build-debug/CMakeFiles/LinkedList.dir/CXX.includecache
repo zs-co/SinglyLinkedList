@@ -14,9 +14,13 @@ H:/LinkedList/Node.h
 
 H:/LinkedList/Node.h
 
+H:/LinkedList/SinglyLinkedList.cpp
+LinkedList.h
+H:/LinkedList/LinkedList.h
+
 H:/LinkedList/main.cpp
 iostream
 -
-LinkedList.h
-H:/LinkedList/LinkedList.h
+SinglyLinkedList.cpp
+H:/LinkedList/SinglyLinkedList.cpp
 

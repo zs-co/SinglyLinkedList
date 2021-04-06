@@ -1,15 +1,13 @@
 #include <iostream>
-#include "LinkedList.h"
+#include "SinglyLinkedList.cpp"
 
 int main(){
-    List list;
-    list.append(32);
-    list.append(322);
-    list.append(900);
-    list.append(99);
-    std::cout << "get = " << list.get(1) << std::endl;
-    list.removeTail();
-    list.removeHead();
+    List<int> list;
+    list.append(12);
+    list.prepend(21);
+    list.insert(1, 1231);
+    list.append(21);//
+    // list.clear();
     list.show();
     return 0;
 }

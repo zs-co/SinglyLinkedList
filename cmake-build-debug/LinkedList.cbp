@@ -86,6 +86,9 @@
 		<Unit filename="H:/LinkedList/Node.h">
 			<Option target="LinkedList"/>
 		</Unit>
+		<Unit filename="H:/LinkedList/SinglyLinkedList.cpp">
+			<Option target="LinkedList"/>
+		</Unit>
 		<Unit filename="H:/LinkedList/main.cpp">
 			<Option target="LinkedList"/>
 		</Unit>
