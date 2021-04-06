@@ -1,19 +1,22 @@
 #include "LinkedList.h"
-template <typename T>
+#include <iostream>
+#include <typeinfo>
+#include <cstring>
 
+template <typename T>
 void List<T>::append(T data) {
     auto *temp = new Node<T>();
     temp->data = data;
     temp->next = nullptr;
     if (this->head == nullptr){
-        head = temp;
-        tail = temp;
-        ++size;
+        this->head = temp;
+        this->tail = temp;
+        ++this->size;
         return;
     }
 
-    Node<T>* node = head;
-    while (node != nullptr){
+    Node<T> *node = head;
+    while (node->next != nullptr){
         node = node->next;
     }
     node->next = temp;
@@ -90,7 +93,7 @@ void List<T>::removeTail() {
     }
 
 
-    while (temp != nullptr){
+    while (temp->next != nullptr){
         prev = temp;
         temp = temp->next;
     }
@@ -100,20 +103,22 @@ void List<T>::removeTail() {
 }
 
 template <typename T>
-T List<T>::get(int index) {
+T List<T>::get(int index) const {
     Node<T>* temp = head;
+    T nothing;
     int i = 0;
     if (head != nullptr){
-        while (temp != nullptr && index != i){
+        while (temp->next != nullptr && index != i){
             ++i;
             temp = temp->next;
         }
+
         if (i == index)
             return temp->data;
-
     }
+    return T{};
 
-    return -1;
+
 }
 
 template <typename T>
@@ -121,7 +126,7 @@ int List<T>::getIndexOf(T value) {
     Node<T>* temp = head;
     int index = 0;
     if (temp != nullptr){
-        while (temp != nullptr && temp->data != value){
+        while (temp->next != nullptr && temp->data != value){
             ++index;
             temp = temp->next;
         }
@@ -153,7 +158,7 @@ void List<T>::update(int index, T value) {
     if (temp == nullptr)
         return;
     int i = 0;
-    while (temp != nullptr && i != index){
+    while (temp->next != nullptr && i != index){
         temp = temp->next;
         i++;
     }
@@ -221,7 +226,7 @@ int List<T>::getLastIndexOf(T value) {
 template <typename T>
 void List<T>::clear() {
     Node<T>* temp = this->head;
-    while (temp != nullptr)
+    while (temp->next != nullptr)
     {
        Node<T>* prev = temp;
         delete prev;

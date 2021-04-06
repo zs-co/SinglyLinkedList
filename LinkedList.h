@@ -19,7 +19,7 @@ public:
     void show();
     void removeHead();
     void removeTail();
-    datatype get(int index);
+    datatype get(int index) const;
     int getIndexOf(datatype value);
     int len();
     void update(int, datatype);

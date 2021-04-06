@@ -7,7 +7,7 @@ public:
     Node<dataType>* next; // address of next node.
 
   explicit Node(){
-        data = 0;
+        data;
         next = nullptr;
     }
 };

@@ -6,21 +6,29 @@
 
 #IncludeRegexTransform: 
 
-H:/LinkedList/LinkedList.h
+H:/LinkedList/SinglyLinkedList/LinkedList.h
 iostream
 -
 Node.h
-H:/LinkedList/Node.h
+H:/LinkedList/SinglyLinkedList/Node.h
 
-H:/LinkedList/Node.h
+H:/LinkedList/SinglyLinkedList/Node.h
 
-H:/LinkedList/SinglyLinkedList.cpp
+H:/LinkedList/SinglyLinkedList/SinglyLinkedList.cpp
 LinkedList.h
-H:/LinkedList/LinkedList.h
+H:/LinkedList/SinglyLinkedList/LinkedList.h
+iostream
+-
+typeinfo
+-
+cstring
+-
 
-H:/LinkedList/main.cpp
+H:/LinkedList/SinglyLinkedList/main.cpp
 iostream
 -
 SinglyLinkedList.cpp
-H:/LinkedList/SinglyLinkedList.cpp
+H:/LinkedList/SinglyLinkedList/SinglyLinkedList.cpp
+string
+-
 
