@@ -1,9 +1,7 @@
 #include "LinkedList.h"
 #include <iostream>
-#include <typeinfo>
-#include <cstring>
 
-template <typename T>
+template <typename T>//LinkedList operations.....
 void List<T>::append(T data) {
     auto *temp = new Node<T>();
     temp->data = data;
@@ -15,18 +13,17 @@ void List<T>::append(T data) {
         return;
     }
 
-    Node<T> *node = head;
+    Node<T> *node = this->head;
     while (node->next != nullptr){
         node = node->next;
     }
     node->next = temp;
-    tail = temp->next;
-    ++size;
-    //std::cout << tail->data << std::endl;
+    this->tail = temp->next;
+    ++this->size;
 }
 template <typename T>
 void List<T>::show(){
-    Node<T>* temp = head;
+    Node<T>* temp = this->head;
     while (temp != nullptr){
         std::cout << temp->data << std::endl;
         temp = temp->next;
@@ -36,22 +33,22 @@ void List<T>::show(){
 template <typename T>
 void List<T>::prepend(T data) {
     auto *temp = new Node<T>();
-    Node<T>* node = head;
+    Node<T>* node = this->head;
     temp->data = data;
     temp->next = node;
-    head = temp;
-    ++size;
+    this->head = temp;
+    ++this->size;
 }
 
 template <typename T>
 void List<T>::remove(int index) {
     int i = 0;
-    Node<T>* temp = head;
+    Node<T>* temp = this->head;
     Node<T>* prev = nullptr;
-    if (head != nullptr){
+    if (this->head != nullptr && index < this->size){
         if (index <= 0){
-            removeHead();
-            --size;
+            this->removeHead();
+            --this->size;
             return;
         }
         while (temp != nullptr && index != i){
@@ -63,51 +60,51 @@ void List<T>::remove(int index) {
             return;
         prev->next = temp->next;
         delete temp;
-        --size;
+        --this->size;
 
     }
 }
 
 template <typename T>
 void List<T>::removeHead() {
-    Node<T>* temp = head;
+    Node<T>* temp = this->head;
     if (temp == nullptr)
         return;
-    head = temp->next;
+    this->head = temp->next;
     delete temp;
-    --size;
+    --this->size;
 }
 
 template <typename T>
 void List<T>::removeTail() {
-    Node<T>* temp = head;
+    Node<T>* temp = this->head;
     Node<T>* prev = nullptr;
-    if (head == nullptr)
+    if (this->head == nullptr)
         return;
 
-    if (head->next == nullptr)
+    if (this->head->next == nullptr)
     {
-        --size;
-        removeHead();
+        --this->size;
+        this->removeHead();
         return;
     }
 
-
+    //remove(getIndexOfTail());
     while (temp->next != nullptr){
         prev = temp;
         temp = temp->next;
     }
     prev->next = nullptr;
     delete temp;
-    --size;
+    this->tail = prev; //tail updated.
+    --this->size;
 }
 
 template <typename T>
 T List<T>::get(int index) const {
-    Node<T>* temp = head;
-    T nothing;
+    Node<T>* temp = this->head;
     int i = 0;
-    if (head != nullptr){
+    if (this->head != nullptr && index < this->size){
         while (temp->next != nullptr && index != i){
             ++i;
             temp = temp->next;
@@ -123,7 +120,7 @@ T List<T>::get(int index) const {
 
 template <typename T>
 int List<T>::getIndexOf(T value) {
-    Node<T>* temp = head;
+    Node<T>* temp = this->head;
     int index = 0;
     if (temp != nullptr){
         while (temp->next != nullptr && temp->data != value){
@@ -149,15 +146,21 @@ int List<T>::getIndexOfTail() {
 
 template <typename T>
 int List<T>::getIndexOfHead() {
-    return 0;
+    if (this->size >= 0)
+        return 0;
+    else
+        return -1;
 }
 
 template <typename T>
 void List<T>::update(int index, T value) {
-    Node<T>* temp = head;
+    Node<T>* temp = this->head;
     if (temp == nullptr)
         return;
     int i = 0;
+    if (index >= this->size){
+        return;
+    }
     while (temp->next != nullptr && i != index){
         temp = temp->next;
         i++;
@@ -172,11 +175,16 @@ template <typename T>
 void List<T>::insert(int index, T value) {
     auto *node = new Node<T>();
     node->data = value;
-    Node<T>* temp = head;
+    Node<T>* temp = this->head;
     Node<T>* prev = nullptr;
     int i = 0;
     if (temp == nullptr || index <= 0){
-        prepend(value);
+        this->prepend(value);
+        return;
+    }
+    if (index >= this->size)
+    {
+        this->append(value);
         return;
     }
     while (temp != nullptr && i != index){
@@ -190,28 +198,28 @@ void List<T>::insert(int index, T value) {
         node->next = temp;
         return;
     }
-    append(value);
+
 }
 
 template <typename T>
-T List<T>::getFirst() {
-    Node<T>* temp = head;
+T List<T>::getFirst() const{
+    Node<T>* temp = this->head;
     if (temp != nullptr){
-        return head->data;
+        return this->head->data;
     }
-    return -1;
+    return T{};
 }
 
 template <typename T>
 T List<T>::getLast() {
-    return get(getIndexOfTail());
+    return this->get(this->size - 1);
 }
 
 template <typename T>
 int List<T>::getLastIndexOf(T value) {
     int lastIndex = -1; //negative means no index is selected.
     int index = 0; // first index.
-    Node<T>* temp = head;
+    Node<T>* temp = this->head;
     if (temp != nullptr){
         while (temp != nullptr){
             if (temp->data == value)

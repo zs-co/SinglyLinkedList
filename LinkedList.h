@@ -24,7 +24,7 @@ public:
     int len();
     void update(int, datatype);
     void insert(int index, datatype value);
-    datatype getFirst();
+    datatype getFirst() const;
     datatype getLast();
     int getLastIndexOf(datatype value);
     void clear();
