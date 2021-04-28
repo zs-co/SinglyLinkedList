@@ -3,19 +3,24 @@
 template <typename datatype>
 class List{
 public:
-    int size = 0;
+    int size;
     Node<datatype> *head;
     Node<datatype> *tail;
+    Node<datatype> *prev;
 
     explicit List(){
         head = nullptr;
         tail = nullptr;
+        prev = nullptr;
+        size = 0;
     }
+
     int getIndexOfTail();
     int getIndexOfHead();
     void prepend(datatype);
     void append(datatype);
     void remove(int index);
+    void show(const bool reverse);
     void show();
     void removeHead();
     void removeTail();

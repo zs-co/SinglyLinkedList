@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "H:/LinkedList/SinglyLinkedList/SinglyLinkedList.cpp" "H:/LinkedList/SinglyLinkedList/cmake-build-debug/CMakeFiles/LinkedList.dir/SinglyLinkedList.cpp.obj"
-  "H:/LinkedList/SinglyLinkedList/main.cpp" "H:/LinkedList/SinglyLinkedList/cmake-build-debug/CMakeFiles/LinkedList.dir/main.cpp.obj"
+  "H:/Data Structures and Algos/Algorithms/SinglyLinkedList/SinglyLinkedList.cpp" "H:/Data Structures and Algos/Algorithms/SinglyLinkedList/cmake-build-debug/CMakeFiles/LinkedList.dir/SinglyLinkedList.cpp.obj"
+  "H:/Data Structures and Algos/Algorithms/SinglyLinkedList/main.cpp" "H:/Data Structures and Algos/Algorithms/SinglyLinkedList/cmake-build-debug/CMakeFiles/LinkedList.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

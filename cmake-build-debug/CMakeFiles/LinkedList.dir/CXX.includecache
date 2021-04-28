@@ -6,25 +6,21 @@
 
 #IncludeRegexTransform: 
 
-H:/LinkedList/SinglyLinkedList/LinkedList.h
+H:/Data Structures and Algos/Algorithms/SinglyLinkedList/DoublyLinkedList.cpp
+LinkedList.h
+H:/Data Structures and Algos/Algorithms/SinglyLinkedList/LinkedList.h
+
+H:/Data Structures and Algos/Algorithms/SinglyLinkedList/LinkedList.h
 iostream
 -
 Node.h
-H:/LinkedList/SinglyLinkedList/Node.h
+H:/Data Structures and Algos/Algorithms/SinglyLinkedList/Node.h
 
-H:/LinkedList/SinglyLinkedList/Node.h
+H:/Data Structures and Algos/Algorithms/SinglyLinkedList/Node.h
 
-H:/LinkedList/SinglyLinkedList/SinglyLinkedList.cpp
-LinkedList.h
-H:/LinkedList/SinglyLinkedList/LinkedList.h
+H:/Data Structures and Algos/Algorithms/SinglyLinkedList/main.cpp
 iostream
 -
-
-H:/LinkedList/SinglyLinkedList/main.cpp
-iostream
--
-SinglyLinkedList.cpp
-H:/LinkedList/SinglyLinkedList/SinglyLinkedList.cpp
-string
--
+DoublyLinkedList.cpp
+H:/Data Structures and Algos/Algorithms/SinglyLinkedList/DoublyLinkedList.cpp
 
